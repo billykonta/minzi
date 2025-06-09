@@ -1,0 +1,361 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 210 40% 98%;
+    --foreground: 222.2 84% 4.9%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222.2 84% 4.9%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222.2 84% 4.9%;
+
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 210 40% 96.1%;
+    --secondary-foreground: 222.2 47.4% 11.2%;
+
+    --muted: 210 40% 96.1%;
+    --muted-foreground: 215.4 16.3% 46.9%;
+
+    --accent: 210 40% 96.1%;
+    --accent-foreground: 222.2 47.4% 11.2%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 214.3 31.8% 91.4%;
+    --input: 214.3 31.8% 91.4%;
+    --ring: 221.2 83.2% 53.3%;
+
+    --radius: 0.75rem;
+
+    /* Custom Mindzi colors */
+    --mindzi-blue: 221.2 83.2% 53.3%;
+    --mindzi-purple: 262 83.3% 57.8%;
+    --mindzi-teal: 174 86% 44.7%;
+    --mindzi-pink: 330 81.2% 60.4%;
+    --mindzi-yellow: 47 95.8% 53.1%;
+  }
+
+  .dark {
+    --background: 222.2 84% 4.9%;
+    --foreground: 210 40% 98%;
+
+    --card: 222.2 84% 9.8%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222.2 84% 9.8%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 217.2 91.2% 59.8%;
+    --primary-foreground: 222.2 47.4% 11.2%;
+
+    --secondary: 217.2 32.6% 17.5%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217.2 32.6% 17.5%;
+    --muted-foreground: 215 20.2% 65.1%;
+
+    --accent: 217.2 32.6% 17.5%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217.2 32.6% 17.5%;
+    --input: 217.2 32.6% 17.5%;
+    --ring: 224.3 76.3% 48%;
+  }
+  
+  /* Midnight Theme - Deep blue night theme */
+  .midnight {
+    --background: 245 70% 10%;
+    --foreground: 213 100% 96%;
+
+    --card: 245 70% 12%;
+    --card-foreground: 213 100% 96%;
+
+    --popover: 245 70% 12%;
+    --popover-foreground: 213 100% 96%;
+
+    --primary: 224 76% 48%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 245 50% 20%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 245 50% 20%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 245 50% 20%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 245 50% 18%;
+    --input: 245 50% 18%;
+    --ring: 224 76% 48%;
+  }
+  
+  /* Sunset Theme - Warm orange and purple tones */
+  .sunset {
+    --background: 15 75% 10%;
+    --foreground: 20 100% 96%;
+
+    --card: 15 75% 12%;
+    --card-foreground: 20 100% 96%;
+
+    --popover: 15 75% 12%;
+    --popover-foreground: 20 100% 96%;
+
+    --primary: 20 90% 50%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 280 60% 30%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 280 30% 20%;
+    --muted-foreground: 20 40% 65%;
+
+    --accent: 280 60% 30%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 15 75% 18%;
+    --input: 15 75% 18%;
+    --ring: 20 90% 50%;
+  }
+  
+  /* Forest Theme - Calming green theme */
+  .forest {
+    --background: 160 70% 8%;
+    --foreground: 150 100% 96%;
+
+    --card: 160 70% 10%;
+    --card-foreground: 150 100% 96%;
+
+    --popover: 160 70% 10%;
+    --popover-foreground: 150 100% 96%;
+
+    --primary: 145 80% 40%;
+    --primary-foreground: 150 100% 96%;
+
+    --secondary: 160 50% 20%;
+    --secondary-foreground: 150 100% 96%;
+
+    --muted: 160 50% 15%;
+    --muted-foreground: 150 30% 70%;
+
+    --accent: 160 50% 20%;
+    --accent-foreground: 150 100% 96%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 150 100% 96%;
+
+    --border: 160 50% 15%;
+    --input: 160 50% 15%;
+    --ring: 145 80% 40%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+}
+
+/* Custom animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.animate-float {
+  animation: float 3s ease-in-out infinite;
+}
+
+/* Progress bar animation */
+@keyframes progress {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: var(--progress-width, 100%);
+  }
+}
+
+.animate-progress {
+  animation: progress 1s ease-out forwards;
+}
+
+/* Theme-specific component visibility improvements */
+.forest .card,
+.forest .dashboard-card,
+.forest [class*="Card"],
+.forest [class*="card"],
+.forest [class*="panel"],
+.forest [class*="Panel"],
+.forest .study-item,
+.forest .task-item {
+  background-color: rgba(0, 0, 0, 0.65) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.forest .sidebar,
+.forest .navbar {
+  background-color: rgba(0, 10, 5, 0.85) !important;
+  backdrop-filter: blur(16px);
+  border-right: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.forest .text-foreground,
+.forest .text-card-foreground,
+.forest h1, .forest h2, .forest h3, .forest h4, .forest h5, .forest h6,
+.forest p, .forest span, .forest div, .forest label {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.sunset .card,
+.sunset .dashboard-card,
+.sunset [class*="Card"],
+.sunset [class*="card"],
+.sunset [class*="panel"],
+.sunset [class*="Panel"],
+.sunset .study-item,
+.sunset .task-item {
+  background-color: rgba(30, 10, 20, 0.65) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 200, 150, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.sunset .sidebar,
+.sunset .navbar {
+  background-color: rgba(30, 5, 20, 0.85) !important;
+  backdrop-filter: blur(16px);
+  border-right: 1px solid rgba(255, 150, 100, 0.1);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.sunset .text-foreground,
+.sunset .text-card-foreground,
+.sunset h1, .sunset h2, .sunset h3, .sunset h4, .sunset h5, .sunset h6,
+.sunset p, .sunset span, .sunset div, .sunset label {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+.midnight .card,
+.midnight .dashboard-card,
+.midnight [class*="Card"],
+.midnight [class*="card"],
+.midnight [class*="panel"],
+.midnight [class*="Panel"],
+.midnight .study-item,
+.midnight .task-item {
+  background-color: rgba(10, 10, 40, 0.65) !important;
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(150, 150, 255, 0.15);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+}
+
+.midnight .sidebar,
+.midnight .navbar {
+  background-color: rgba(5, 5, 30, 0.85) !important;
+  backdrop-filter: blur(16px);
+  border-right: 1px solid rgba(100, 100, 255, 0.1);
+  box-shadow: 0 0 25px rgba(0, 0, 0, 0.5);
+}
+
+.midnight .text-foreground,
+.midnight .text-card-foreground,
+.midnight h1, .midnight h2, .midnight h3, .midnight h4, .midnight h5, .midnight h6,
+.midnight p, .midnight span, .midnight div, .midnight label {
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.8);
+}
+
+/* General improvements for all themed backgrounds */
+.dashboard-card,
+.card,
+[class*="Card"],
+[class*="card"],
+[class*="panel"],
+[class*="Panel"],
+.study-item,
+.task-item {
+  position: relative;
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+/* Card hover effects */
+.card:hover,
+.dashboard-card:hover,
+[class*="Card"]:hover,
+[class*="card"]:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+}
+
+/* Ensure sidebar is always visible */
+.sidebar {
+  position: relative;
+  z-index: 20;
+}
+
+/* Enhanced sidebar styling */
+.sidebar {
+  border-right: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+}
+
+.dark .sidebar {
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Enhanced card styling for all themes */
+.card,
+.dashboard-card {
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+/* Progress bars styling */
+.progress {
+  height: 8px;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.forest .progress-value {
+  background: linear-gradient(90deg, rgb(16, 185, 129) 0%, rgb(5, 150, 105) 100%);
+}
+
+.sunset .progress-value {
+  background: linear-gradient(90deg, rgb(249, 115, 22) 0%, rgb(217, 70, 239) 100%);
+}
+
+.midnight .progress-value {
+  background: linear-gradient(90deg, rgb(79, 70, 229) 0%, rgb(16, 185, 129) 100%);
+}
